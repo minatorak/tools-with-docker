@@ -2,6 +2,8 @@ version: '3.8'
 services:
   dragonfly:
     image: 'docker.dragonflydb.io/dragonflydb/dragonfly'
+    environment:
+      DRAGONFLY_MAX_MEMORY: 500m
     ulimits:
       memlock: -1
     ports:
