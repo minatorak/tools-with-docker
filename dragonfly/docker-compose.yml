@@ -13,11 +13,12 @@ services:
     # https://docs.docker.com/compose/compose-file/compose-file-v3/#network_mode
     # network_mode: "host"
     volumes:
-      - dragonflydata:/data
+      - redis_data:/data
     networks:
       - trade-network
 volumes:
-  dragonflydata:
+  redis_data:
+    driver: local
 networks:
   trade-network: 
     external: true
