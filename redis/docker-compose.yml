@@ -1,8 +1,8 @@
-version: '2'
+version: '3.8'
 
 services:
   redis:
-    image: docker.io/bitnami/redis:lastest
+    image: bitnami/redis:latest
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -11,7 +11,13 @@ services:
       - '6379:6379'
     volumes:
       - 'redis_data:/bitnami/redis/data'
-
+    networks:
+      - trade-network
 volumes:
   redis_data:
     driver: local
+
+networks:
+  trade-network: 
+    external: true
+    driver: bridge
