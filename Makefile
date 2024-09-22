@@ -1,10 +1,17 @@
-dragonfly up:
-	podman compose -f ./dragonfly/docker-compose.yml up -d
+dragonfly-up:
+	podman compose --file ./dragonfly/docker-compose.yml up -d
 
-dragonfly down:
-	podman compose -f ./dragonfly/docker-compose.yml down
+dragonfly-down:
+	podman compose --file ./dragonfly/docker-compose.yml down
 
-network create:
+rabit-up:
+	podman compose --file ./rabbitmq/compose.yaml up -d
+
+rabit-down:
+	podman compose --file ./rabbitmq/compose.yaml down
+
+network-create:
 	podman network create trade-network
-network remove:
+
+network-remove:
 	podman network rm trade-network
