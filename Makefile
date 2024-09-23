@@ -4,10 +4,10 @@ dragonfly-up:
 dragonfly-down:
 	podman compose --file ./dragonfly/docker-compose.yml down
 
-rabit-up:
+rabbit-up:
 	podman compose --file ./rabbitmq/compose.yaml up -d
 
-rabit-down:
+rabbit-down:
 	podman compose --file ./rabbitmq/compose.yaml down
 
 network-create:
