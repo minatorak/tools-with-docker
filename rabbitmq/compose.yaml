@@ -13,3 +13,8 @@ services:
 
 volumes:
   rabbitmq_data:
+
+networks:
+  trade-network: 
+    external: true
+    driver: bridge
