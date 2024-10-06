@@ -10,6 +10,12 @@ rabbit-up:
 rabbit-down:
 	podman compose --file ./rabbitmq/compose.yaml down
 
+kafka-up:
+	podman compose --file ./kafka/kafka-compose.yml up -d
+
+kafka-down:
+	podman compose --file ./kafka/kafka-compose.yml down
+
 network-create:
 	podman network create trade-network
 
