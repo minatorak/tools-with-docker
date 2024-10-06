@@ -17,7 +17,7 @@ list_queues:
 	$(rabbitmqctl) list_queues
 
 get_queues:
-	$(rabbitmqadmin) get queue=signal
+	$(rabbitmqadmin) get queue=signal count=10
 
 list_plugin:
 	podman exec -it rabbitmq rabbitmq-plugins list
